@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Book;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -20,6 +21,10 @@ return new class extends Migration
             $table->integer('pieces')->default(10);
             $table->timestamps();
         });
+
+        // ide kerülnek a rekordok
+        Book::create(['author'=>'Bödőcs Tibor', 'title'=>'Meg se kináltak']);
+        Book::create(['author'=>'Agatha Christie', 'title'=>'Halál a Níluson', 'pieces'=>20]);
     }
 
     /**
