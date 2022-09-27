@@ -19,12 +19,14 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
+            //$table->rememberToken();
             $table->timestamps();
         });
 
         //rekordok ide kerülnek
         User::create(['name'=>'Gizi', 'email'=>'diak1@gmail.com']);
         User::create(['name'=>'Gazsi', 'email'=>'diak2@gmail.com']);
+        User::create(['name'=>'Jani', 'email'=>'diak3@gmail.com']);
     }
 
     /**
